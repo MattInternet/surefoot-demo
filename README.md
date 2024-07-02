@@ -1,5 +1,9 @@
 >This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Gotchas
+
+Due to a [very weird issue](https://github.com/mui/material-ui/issues/34489) in MUI, fresh clones of this project must run `yarn add @mui/joy` **once** before other commands, like `yarn start` or `yarn build`.
+
 ## Available Scripts
 
 In the project directory, you can run:
