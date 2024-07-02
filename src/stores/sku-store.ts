@@ -47,6 +47,14 @@ export class SkuStore {
         }
     }
 
+    private beep = (happy: boolean) => {
+        if(happy){
+            new Audio("beep.mp3").play();
+            return;
+        }
+        new Audio("warning.mp3").play();
+    }
+
     private setClearTimer = () => {
         clearTimeout(this.clearTimer);
         this.clearTimer = setTimeout( this.clearPendingScan, 1000);
@@ -75,7 +83,7 @@ export class SkuStore {
         const previousScan = this.scannedSkus.find(scannedSku => scannedSku.sku.sku === scanValue);
         if(previousScan){
             previousScan.quantity++;
-            //TODO: happy beep
+            this.beep(true);
             return;
         }
 
@@ -83,11 +91,11 @@ export class SkuStore {
         const knownSku = this.knownSkus.find(knownSku => knownSku.sku === scanValue );
         if(knownSku){
             this.scannedSkus = [...this.scannedSkus, {sku: knownSku, quantity: 1}]
-            //TODO: happy beep
+            this.beep(true);
             return;
         }
 
-        //TODO: UNHAPPY beep
+        this.beep(false);
         this.unknownSku = scanValue;
     }
 }
