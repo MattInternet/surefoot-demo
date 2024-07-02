@@ -26,7 +26,6 @@ export const AppLayout = () => {
         }}
       >
         <Logo height="100%"/>
-        This could be a Header component with whatever
       </Box>
       <Box component="main" className="Main">
         <Outlet />
