@@ -1,5 +1,4 @@
 import { observer } from "mobx-react";
-import { Fragment } from "react";
 import { ScannedSku } from "../../data";
 import {
   Card,

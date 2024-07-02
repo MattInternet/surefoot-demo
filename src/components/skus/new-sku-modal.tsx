@@ -1,5 +1,4 @@
 import { observer } from "mobx-react";
-import { useSkuStore } from "../../hooks";
 import { Sku } from "../../data";
 import {
   Button,
